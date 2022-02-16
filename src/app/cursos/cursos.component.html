@@ -1,0 +1,26 @@
+<div>
+    <label id="novo-curso">Nome do curso</label>
+    <input for="novo-curso" #cursoNome/>
+  <button class="adicionar-botao" (click)="add(cursoNome.value); cursoNome.value=''">
+    Add curso 
+  </button>
+</div>
+
+<ul class="cursos">
+    <li *ngFor="let curso of nomeCursos">
+        <a routerLink="/detalhes/{{curso.id}}">
+        <span class="area">{{curso.nome}}</span>
+    </a>
+    <button class="delete" title="delete curso"
+  (click)="delete(curso)">X</button>
+    </li>
+  
+</ul>
+
+
+
+
+
+
+<!-- <app-cursos-detalhes [curso]="selecioneCurso"></app-cursos-detalhes> aqui faz com que esse componente pai
+vincule o componente filho a ele quando clicar no curso, tirei ele daqui agora pois estou criando uma rota só pra ele-->
